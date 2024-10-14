@@ -21,6 +21,8 @@ jobs:
         name: List keys
         run: |
           gpg -K
+          gpg --version
           touch /tmp/gpg.txt
           #export GPG_TTY=`tty`
           gpg --batch -v --local-user F57FACF7D95135183C15AB6B409192A195AFD6C9 --output /tmp/gpg.encr --detach-sign /tmp/gpg.txt
+          cat  /tmp/gpg.encr
